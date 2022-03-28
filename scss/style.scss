@@ -1,9 +1,6 @@
-$primary-txt-color: #000000;
-
 * {
     font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    color: $primary-txt-color;
+    font-weight: 400;
 }
 
 body {
@@ -105,6 +102,9 @@ body {
         align-items: center;
         &-column {
             width: 100%;
+            &:nth-of-type(2) {
+                margin: 0;
+            }
             margin-bottom: 30px;
         }
     }
@@ -116,20 +116,38 @@ body {
             width: 100%;
         }
         .my-info {
+            position: relative;
+            display: inline-block;
             margin: 0;
-            padding: 10px;
-            padding-left: 0;
+            padding: 0 20px;
+            height: 50px;
+            line-height: 50px;
+
+            background-color: black;
             @media (max-width: 660px) {
                 text-align: center;
                 line-height: 1.6;
             }
+
             &-span {
-                font-weight: bold;
                 font-size: 1.6rem;
-                padding: 10px;
-                padding-right: 0;
                 color: white;
-                background-color: black;
+                font-weight: 500;
+                line-height: 50px;
+            }
+
+            &::after {
+                // triangle
+                content: "";
+                position: absolute;
+                display: block;
+                width: 0;
+                height: 0;
+
+                border-left: 40px solid black;
+                border-bottom: 50px solid transparent;
+                right: -39px; //defect line
+                top: 0;
             }
         }
         .my-info-text {
@@ -148,15 +166,14 @@ body {
             }
             .p-lorem1 {
                 margin: 0;
-                font-weight: 400;
+                font-weight: 500;
             }
 
             .p-quote {
-                font-size: 0.7rem;
                 font-weight: bold;
 
                 q {
-                    font-weight: 400;
+                    quotes: "«" "»";
                     font-style: italic;
                 }
             }
@@ -168,6 +185,238 @@ body {
                     font-weight: bold;
                 }
             }
+        }
+    }
+    margin-bottom: 30px;
+}
+
+//skills section
+
+.skills {
+    border-top: 2px solid black;
+    display: flex;
+    padding: 40px 0;
+    border-bottom: 2px solid black;
+    @media (max-width: 930px) {
+        flex-direction: column;
+        align-items: center;
+    }
+    &-column {
+        width: 50%;
+        @media (max-width: 930px) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        &-head {
+            position: relative;
+            display: inline-block;
+
+            padding: 0 20px;
+            height: 50px;
+            line-height: 50px;
+            background-color: black;
+            @media (max-width: 930px) {
+                margin-left: 0;
+            }
+            &::after {
+                // triangle
+                content: "";
+                position: absolute;
+                display: block;
+                width: 0;
+                height: 0;
+
+                border-left: 40px solid black;
+                border-bottom: 50px solid transparent;
+                right: -39px; //defect line
+                top: 0;
+            }
+            &-span {
+                font-weight: 500;
+                font-size: 1.6rem;
+                color: white;
+            }
+        }
+        &-list {
+            ul {
+                padding: 0;
+                .li-elem {
+                    font-weight: 500;
+                    list-style: none;
+                    margin: 10px 0px;
+                    &::before {
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        background: #000000;
+                        border-radius: 50%;
+                        float: left;
+                        margin: 10px 20px;
+                    }
+                }
+            }
+        }
+
+        .skills-column-descr {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 20px;
+            &-span {
+                box-sizing: border-box;
+                font-style: italic;
+                font-weight: 500;
+                background-color: #d1d1d1;
+                margin: 5px 0;
+                padding: 8px;
+
+                &:nth-of-type(1) {
+                    width: 10%;
+                }
+                &:nth-of-type(2) {
+                    width: 100%;
+                }
+                &:nth-of-type(3) {
+                    width: 60%;
+                }
+                &:nth-of-type(4) {
+                    width: 35%;
+                }
+                &:nth-of-type(5) {
+                    width: 0%;
+                }
+            }
+        }
+        .ruler-container {
+            font-size: 0;
+            .ruler {
+                display: inline-block;
+                box-sizing: border-box;
+                padding: 10px;
+                width: 20%;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+            }
+            .number {
+                position: relative;
+                display: inline-block;
+                font-size: 16px;
+                box-sizing: border-box;
+                margin: 0;
+                width: 20%;
+                text-align: right;
+                right: -2px;
+            }
+        }
+    }
+}
+
+//logo-sect
+
+.logo-sect {
+    display: flex;
+    @media (max-width: 660px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-img {
+        margin-left: 50px;
+        @media (max-width: 660px) {
+            margin-left: 0;
+        }
+    }
+    &-txt {
+        margin-left: 30px;
+        margin-top: 20px;
+        @media (max-width: 660px) {
+            margin-left: 0;
+            text-align: justify;
+        }
+    }
+}
+
+//footer-sect
+footer {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: rgb(0, 0, 0);
+    padding: 30px 50px;
+    color: white;
+    line-height: 1.5;
+    .footer-inner {
+        display: flex;
+        justify-content: space-around;
+
+        color: white;
+        @media (max-width: 660px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .footer-header {
+            text-transform: uppercase;
+            margin: 10px 0;
+        }
+        &-socialnet {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+
+            a {
+                color: white;
+                &:hover {
+                    color: red;
+                }
+            }
+        }
+
+        &-contacts {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+            a {
+                color: white;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &-logo {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            min-width: 200px;
+            height: 200px;
+            border: 15px solid white;
+            border-radius: 50%;
+
+            &-inside {
+                position: relative;
+                display: block;
+                border-radius: 50%;
+                background-color: white;
+                width: 80%;
+                height: 80%;
+                align-self: center;
+                text-align: center;
+                line-height: normal;
+                .footer-logo-text {
+                    position: absolute;
+                    color: black;
+                    font-size: 1.5rem;
+                    top: calc(50% - 2rem);
+                    left: calc(50% - 2rem);
+                }
+            }
+        }
+    }
+    @media (max-width: 660px) {
+        .footer-school {
+            text-align: center;
+            margin-top: 20px;
         }
     }
 }
