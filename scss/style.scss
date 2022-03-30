@@ -35,7 +35,7 @@ body {
 
         &-link {
             display: inline-block;
-            line-height: 18px;
+            line-height: 19px;
             font-size: 18px;
             height: 20px;
             box-sizing: border-box;
@@ -45,7 +45,7 @@ body {
 
             &:hover {
                 border-bottom: 2px solid black;
-                font-weight: bold;
+                text-shadow: 0 0 2px black;
             }
         }
         @media (max-width: 660px) {
